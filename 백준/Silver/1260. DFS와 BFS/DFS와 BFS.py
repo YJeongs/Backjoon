@@ -25,13 +25,14 @@ def bfs(graph, start, visited):
                 visited[neighbor] = True
 
 n,m,v = map(int,input().split())
-graph = [[] for _ in range(n+1)] #딕셔너리
+graph = [[] for _ in range(n+1)] 
 
 for _ in range(m):
     a, b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)
-for i in graph:
+    
+for i in graph: #번호가 적은 숫자부터 방문
     i.sort()
 
 visited = [False] * (n+1)
